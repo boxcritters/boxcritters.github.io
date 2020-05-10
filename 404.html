@@ -2,10 +2,9 @@
 <script>
 	var ghHost = "github.com";
 	var ghPath = "/boxcritters" + window.location.pathname;
+	let ghUrl= "https://" + ghHost + ghPath;
 	function yes() {
-		window.location.pathname = ghPath;
-		window.location.host = ghHost;
-		console.log("YES");
+		window.location.href = ghUrl
 	}
 	function no() {
 		console.log("NO");
