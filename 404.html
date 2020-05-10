@@ -1,9 +1,9 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 <script>
 	var ghHost = "github.com";
-	var ghPath = "/boxcritters" + window.location.path;
+	var ghPath = "/boxcritters" + window.location.pathname;
 	$.get(ghHost + ghPath).done(function () {
-		window.location.path = ghPath;
+		window.location.pathname = ghPath;
 		window.location.host = ghHost;
 	}).fail(function () {
 		window.location.host = "boxcrittersmods.ga";
