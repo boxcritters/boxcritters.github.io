@@ -4,12 +4,10 @@
 	var ghPath = "/boxcritters" + window.location.pathname;
 	let ghUrl= "https://" + ghHost + ghPath;
 	function yes() {
-		console.log("YES");
 		window.location.href = ghUrl
 	}
 	function no() {
-		console.log("NO");
-		//window.location.host = "boxcrittersmods.ga";
+		window.location.host = "boxcrittersmods.ga";
 	}
 	$.ajax({
 		url: ghUrl,
