@@ -3,9 +3,11 @@
 	var ghHost = "github.com";
 	var ghPath = "/boxcritters" + window.location.pathname;
 	$.get("https://" + ghHost + ghPath).done(function () {
-		window.location.pathname = ghPath;
-		window.location.host = ghHost;
+		//window.location.pathname = ghPath;
+		//window.location.host = ghHost;
+		console.log("YES");
 	}).fail(function () {
+		console.log("NO");
 		window.location.host = "boxcrittersmods.ga";
 	});
 </script>
