@@ -2,17 +2,29 @@
 <script>
 	var ghHost = "github.com";
 	var ghPath = "/boxcritters" + window.location.pathname;
-	console.log("A nudge")
-	$.ajax({
-    type: "GET",
-    url: "https://" + ghHost + ghPath,
-    dataType: "text"
-}).done(function () {
+	function yes() {
 		//window.location.pathname = ghPath;
 		//window.location.host = ghHost;
 		console.log("YES");
-	}).fail(function () {
+	}
+	function no() {
 		console.log("NO");
 		//window.location.host = "boxcrittersmods.ga";
+	}
+	let ghUrl= "https://" + ghHost + ghPath;
+	$.ajax({
+		url: url,
+		dataType: 'jsonp',
+		statusCode: {
+			200: function () {
+			yes();
+			},
+			404: function () {
+				no();
+			}
+		},
+		error: function () {
+			no();
+		}
 	});
 </script>
