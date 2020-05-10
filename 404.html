@@ -2,7 +2,12 @@
 <script>
 	var ghHost = "github.com";
 	var ghPath = "/boxcritters" + window.location.pathname;
-	$.get("https://" + ghHost + ghPath).done(function () {
+	console.log("A")
+	$.ajax({
+    type: "GET",
+    url: "https://" + ghHost + ghPath,
+    dataType: "text"
+}).done(function () {
 		//window.location.pathname = ghPath;
 		//window.location.host = ghHost;
 		console.log("YES");
